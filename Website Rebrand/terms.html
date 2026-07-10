@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms & Conditions — Tripsessed Luxury Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #1B2F52; --navy-dark: #111E35; --gold: #C4A44A; --gold-light: #D4B96A;
+    --gold-dark: #9A7E32; --sand: #F5EFE2; --sand-dark: #E8DEC8; --ivory: #FDFAF4;
+    --charcoal: #1A1A18; --warm-gray: #6B6358; --light-gray: #B5AFA5;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --max-w: 1100px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--ivory); color: var(--charcoal); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  .page-transition { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: var(--ivory); pointer-events: none; opacity: 0; transition: opacity 0.3s ease; }
+  .page-transition.active { opacity: 1; pointer-events: all; }
+  .page-transition img { width: 220px; animation: logoPulse 0.8s ease-in-out infinite alternate; }
+  @keyframes logoPulse { from { opacity: 0.5; transform: scale(0.96); } to { opacity: 1; transform: scale(1.04); } }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; background: rgba(253,250,244,0.97); border-bottom: 1px solid var(--sand-dark); backdrop-filter: blur(8px); }
+  .nav-logo img { height: 68px; display: block; }
+  .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+  .nav-links a { font-size: 12px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--warm-gray); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--navy); }
+  .nav-cta { font-size: 11px !important; font-weight: 500 !important; letter-spacing: 0.1em !important; color: var(--navy) !important; background: var(--gold); padding: 10px 22px; border-radius: 2px; }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+  .page-hero { padding: 140px 24px 64px; background: var(--navy-dark); text-align: center; }
+  .page-hero h1 { font-family: var(--font-display); font-size: clamp(38px, 5vw, 58px); font-weight: 500; color: var(--ivory); margin-bottom: 12px; }
+  .page-hero p { font-size: 14px; color: rgba(245,239,226,0.45); font-weight: 300; }
+  main { max-width: 760px; margin: 0 auto; padding: 72px 24px 100px; }
+  .gold-rule { width: 40px; height: 2px; background: var(--gold); margin: 0 0 48px; }
+  h2 { font-family: var(--font-display); font-size: 28px; font-weight: 500; color: var(--navy); margin: 44px 0 14px; }
+  p { font-size: 15px; font-weight: 300; color: var(--warm-gray); line-height: 1.85; margin-bottom: 14px; }
+  ul { margin: 12px 0 16px 20px; }
+  ul li { font-size: 15px; font-weight: 300; color: var(--warm-gray); line-height: 1.8; margin-bottom: 6px; }
+  a { color: var(--navy); text-underline-offset: 3px; }
+  footer { background: var(--sand); padding: 48px 40px 32px; }
+  .footer-inner { max-width: var(--max-w); margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; padding-bottom: 40px; border-bottom: 1px solid var(--sand-dark); margin-bottom: 28px; }
+  .footer-logo { height: 70px; display: block; margin-bottom: 16px; }
+  .footer-brand p { font-size: 14px; color: var(--warm-gray); line-height: 1.7; font-weight: 300; max-width: 280px; margin-bottom: 0; }
+  .footer-brand .contact-info { margin-top: 20px; display: flex; flex-direction: column; gap: 6px; }
+  .footer-brand .contact-info a { font-size: 13px; color: var(--warm-gray); text-decoration: none; transition: color 0.2s; }
+  .footer-brand .contact-info a:hover { color: var(--navy); }
+  .footer-col h4 { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy); margin-bottom: 18px; }
+  .footer-col ul { list-style: none; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col li { margin: 0; }
+  .footer-col a { font-size: 14px; color: var(--warm-gray); text-decoration: none; font-weight: 300; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--navy); }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-bottom p { font-size: 12px; color: var(--light-gray); margin: 0; }
+  @media (max-width: 860px) { nav { padding: 12px 20px; } .nav-links { display: none; } .footer-top { grid-template-columns: 1fr; gap: 32px; } }
+
+  /* HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+    z-index: 200;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--navy);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--ivory);
+    z-index: 150;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 24px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: var(--font-display);
+    font-size: 34px;
+    font-weight: 500;
+    color: var(--navy);
+    text-decoration: none;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--sand-dark);
+    width: 100%;
+    text-align: center;
+    transition: color 0.2s;
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--gold-dark); }
+  .mobile-menu .mobile-cta {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy) !important;
+    background: var(--gold);
+    margin-top: 20px;
+    padding: 16px 48px;
+    width: auto;
+    border: none !important;
+    border-radius: 2px;
+  }
+  @media (max-width: 860px) {
+    .nav-links { display: none !important; }
+    .nav-hamburger { display: flex !important; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="page-transition" id="page-transition">
+  <img src="logo-color.png" alt="Tripsessed">
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo-color.png" alt="Tripsessed Luxury Travel">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#impact">Impact Travel</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="expeditions.html">Expeditions</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="index.html#inquiry" class="nav-cta">Start planning</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html#about" onclick="closeMenu()">About</a>
+  <a href="index.html#impact" onclick="closeMenu()">Impact Travel</a>
+  <a href="expeditions.html" onclick="closeMenu()">Expeditions</a>
+  <a href="faq.html" onclick="closeMenu()">FAQ</a>
+  <a href="index.html#inquiry" class="mobile-cta" onclick="closeMenu()">Start planning</a>
+</div>
+
+<div class="page-hero">
+  <h1>Terms & Conditions</h1>
+  <p>Last updated: July 2025</p>
+</div>
+
+<main>
+  <div class="gold-rule"></div>
+
+  <p>These Terms and Conditions ("Terms") govern your use of the Tripsessed website at tripsessed.com and any travel planning services provided by Tripsessed Luxury Travel Service ("Tripsessed," "we," "us," or "our"). By accessing our website or engaging our services, you agree to these Terms in full.</p>
+
+  <h2>Our Role as Travel Advisors</h2>
+  <p>Tripsessed acts as a travel advisor and booking intermediary. We do not own, operate, or control any airlines, hotels, cruise lines, tour operators, or other travel service providers. Our role is to research, recommend, and facilitate bookings on your behalf.</p>
+  <p>All travel services are subject to the terms, conditions, and policies of the respective vendors and suppliers, which you agree to by proceeding with a booking.</p>
+
+  <h2>Bookings & Confirmations</h2>
+  <p>No travel booking is confirmed until you have received written confirmation from Tripsessed and all required deposits or payments have been received. We reserve the right to decline any booking request at our discretion.</p>
+  <p>It is your responsibility to review all booking details upon receipt of confirmation and notify us promptly of any errors or discrepancies.</p>
+
+  <h2>Payments & Deposits</h2>
+  <p>Payment schedules, deposit amounts, and final payment deadlines vary by vendor and trip type and will be communicated to you prior to booking confirmation. Tripsessed does not hold client funds — all payments are made directly to travel suppliers or through approved booking platforms.</p>
+  <p>A planning fee may apply for complex itineraries. This will always be disclosed and agreed upon before any planning work begins.</p>
+
+  <h2>Cancellations & Changes</h2>
+  <p>Cancellation and change policies are determined by individual vendors and suppliers, not by Tripsessed. These policies will be clearly communicated before you confirm any booking. Cancellation fees imposed by vendors are the responsibility of the client.</p>
+  <p>We strongly recommend purchasing comprehensive travel insurance at the time of booking to protect against cancellation, interruption, and unforeseen events.</p>
+
+  <h2>Expedition-Specific Terms</h2>
+  <p>For group expedition bookings, the following additional terms apply:</p>
+  <ul>
+    <li>Spots are limited and reserved on a first-come, first-served basis upon receipt of deposit</li>
+    <li>Expedition deposits are non-refundable unless the expedition is cancelled by Tripsessed</li>
+    <li>Tripsessed reserves the right to modify expedition itineraries due to safety, logistics, or circumstances beyond our control</li>
+    <li>Participants are responsible for obtaining appropriate visas, vaccinations, and travel documents for their destination</li>
+    <li>Travel insurance is strongly recommended and may be required for certain expeditions</li>
+    <li>Tripsessed and United in One Global Foundation are separate entities; community activities on expeditions are organized in good faith and may be subject to change</li>
+  </ul>
+
+  <h2>Travel Documents & Requirements</h2>
+  <p>You are solely responsible for ensuring that you hold a valid passport, any required visas, and any health documentation (including vaccinations) required for your destination. Tripsessed will provide general guidance where possible but cannot be held responsible for denied entry, missed travel, or other consequences arising from inadequate documentation.</p>
+
+  <h2>Limitation of Liability</h2>
+  <p>Tripsessed shall not be liable for any loss, damage, injury, delay, or inconvenience caused by events beyond our control, including but not limited to acts of nature, government actions, strikes, health emergencies, terrorism, or the acts or omissions of third-party vendors.</p>
+  <p>In no event shall Tripsessed's liability exceed the total planning fees paid by the client to Tripsessed for the affected booking.</p>
+
+  <h2>Website Use</h2>
+  <p>The content on tripsessed.com is provided for informational purposes only. While we strive to keep information accurate and current, we make no warranties regarding the completeness or accuracy of any content. Unauthorized use or reproduction of any content on this website is prohibited.</p>
+
+  <h2>Privacy</h2>
+  <p>Your use of our website and services is also governed by our <a href="privacy.html">Privacy Policy</a>, which is incorporated into these Terms by reference.</p>
+
+  <h2>Governing Law</h2>
+  <p>These Terms shall be governed by and construed in accordance with the laws of the State of Florida, United States. Any disputes arising from these Terms or our services shall be subject to the exclusive jurisdiction of the courts of Orange County, Florida.</p>
+
+  <h2>Changes to These Terms</h2>
+  <p>We reserve the right to update these Terms at any time. Changes will be posted on this page with an updated date. Continued use of our services following any changes constitutes acceptance of the revised Terms.</p>
+
+  <h2>Contact Us</h2>
+  <p>For questions about these Terms, please contact us at:<br>
+  <a href="mailto:info@tripsessed.com">info@tripsessed.com</a> · <a href="tel:4078289582">(407) 828-9582</a></p>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo-color.png" alt="Tripsessed Luxury Travel" class="footer-logo">
+        <p>Luxury travel planning with purpose. FORA advisors serving clients worldwide.</p>
+        <div class="contact-info">
+          <a href="mailto:info@tripsessed.com">info@tripsessed.com</a>
+          <a href="tel:4078289582">(407) 828-9582</a>
+          <a href="https://www.instagram.com/tripsessed.luxurytravel" target="_blank" style="display:flex;align-items:center;gap:8px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            @tripsessed.luxurytravel
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html#about">About us</a></li>
+          <li><a href="index.html#impact">Impact travel</a></li>
+          <li><a href="expeditions.html">Expeditions</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="index.html#inquiry">Start planning</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Tripsessed Luxury Travel Service. All rights reserved.</p>
+      <p>FORA Travel Advisor</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const transition = document.getElementById('page-transition');
+  document.querySelectorAll('a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && !href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('tel') && !href.startsWith('http') && href !== '#') {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        transition.classList.add('active');
+        setTimeout(() => { window.location.href = href; }, 600);
+      });
+    }
+  });
+  window.addEventListener('pageshow', () => { transition.classList.remove('active'); });
+
+  function toggleMenu() {
+    document.getElementById('hamburger').classList.toggle('open');
+    document.getElementById('mobile-menu').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+</script>
+</body>
+</html>
