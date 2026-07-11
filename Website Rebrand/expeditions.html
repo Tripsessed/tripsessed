@@ -835,9 +835,6 @@
   <h2>Be first to know about <em>new expeditions</em></h2>
   <p>Drop your email and we'll reach out the moment new dates and destinations are confirmed.</p>
   <div class="notify-form" id="notify-form">
-    <form name="expedition-notify" netlify netlify-honeypot="bot-field" hidden>
-      <input name="email">
-    </form>
     <input type="email" id="notify-email" placeholder="your@email.com">
     <button onclick="submitNotify()">Notify me</button>
   </div>
@@ -882,7 +879,7 @@
     </div>
     <div class="footer-bottom">
       <p>© 2026 Tripsessed Luxury Travel Service. All rights reserved.</p>
-      <p>FORA Travel Advisor</p>
+      <p>FORA Travel Advisor · Florida Seller of Travel Reg. No. ST43973</p>
     </div>
   </div>
 </footer>
@@ -911,15 +908,20 @@
       alert('Please enter a valid email address.');
       return;
     }
-    const data = new FormData();
-    data.append('form-name', 'expedition-notify');
-    data.append('email', email);
-    fetch('/', { method: 'POST', body: data })
-      .then(() => {
+    fetch('https://formspree.io/f/xdarqvvj', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ email: email })
+    })
+    .then(response => {
+      if (response.ok) {
         document.getElementById('notify-form').style.display = 'none';
         document.getElementById('notify-success').style.display = 'block';
-      })
-      .catch(() => alert('Something went wrong. Please email us at info@tripsessed.com'));
+      } else {
+        alert('Something went wrong. Please email us at info@tripsessed.com');
+      }
+    })
+    .catch(() => alert('Something went wrong. Please email us at info@tripsessed.com'));
   }
 
   function toggleMenu() {
