@@ -1213,11 +1213,6 @@
         </div>
       </div>
       <div class="form-grid" id="netlify-form-fields">
-        <form name="inquiry" netlify netlify-honeypot="bot-field" hidden>
-          <input name="first-name"> <input name="last-name"> <input name="email"> <input name="phone">
-          <input name="destination"> <input name="budget"> <input name="travel-date"> <input name="travelers">
-          <textarea name="notes"></textarea> <input type="checkbox" name="impact-interest">
-        </form>
         <div class="form-group">
           <label for="fname">First name</label>
           <input type="text" id="fname" placeholder="Jason">
@@ -1387,25 +1382,33 @@
       alert('Please fill in your name, email, and destination to continue.');
       return;
     }
-    const data = new FormData();
-    data.append('form-name', 'inquiry');
-    data.append('first-name', fname);
-    data.append('last-name', document.getElementById('lname').value.trim());
-    data.append('email', email);
-    data.append('phone', document.getElementById('phone').value.trim());
-    data.append('destination', destination);
-    data.append('budget', document.getElementById('budget').value);
-    data.append('travel-date', document.getElementById('travel-date').value.trim());
-    data.append('travelers', document.getElementById('travelers').value);
-    data.append('notes', document.getElementById('notes').value.trim());
-    data.append('impact-interest', document.getElementById('impact-interest').checked ? 'Yes' : 'No');
-    fetch('/', { method: 'POST', body: data })
-      .then(() => {
+    const data = {
+      'first-name': fname,
+      'last-name': document.getElementById('lname').value.trim(),
+      'email': email,
+      'phone': document.getElementById('phone').value.trim(),
+      'destination': destination,
+      'budget': document.getElementById('budget').value,
+      'travel-date': document.getElementById('travel-date').value.trim(),
+      'travelers': document.getElementById('travelers').value,
+      'notes': document.getElementById('notes').value.trim(),
+      'impact-interest': document.getElementById('impact-interest').checked ? 'Yes' : 'No'
+    };
+    fetch('https://formspree.io/f/xpqgveed', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(response => {
+      if (response.ok) {
         document.getElementById('inquiry-form').style.display = 'none';
         document.getElementById('success-msg').style.display = 'block';
         document.getElementById('success-msg').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      })
-      .catch(() => alert('Something went wrong. Please email us directly at info@tripsessed.com'));
+      } else {
+        alert('Something went wrong. Please email us directly at info@tripsessed.com');
+      }
+    })
+    .catch(() => alert('Something went wrong. Please email us directly at info@tripsessed.com'));
   }
 </script>
 </body>
