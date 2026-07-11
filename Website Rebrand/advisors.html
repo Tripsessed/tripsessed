@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet the Advisors — Tripsessed Luxury Travel</title>
+<meta name="description" content="Meet Jason and Katherine, the travel advisors behind Tripsessed. With experience across 100+ countries, they specialize in Africa, Europe, Asia, and South America — crafting journeys that go beyond the itinerary.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Meet the Advisors — Tripsessed Luxury Travel">
+<meta property="og:description" content="Meet Jason and Katherine, the travel advisors behind Tripsessed. With experience across 100+ countries, they specialize in Africa, Europe, Asia, and South America.">
+<meta property="og:image" content="https://www.tripsessed.com/kenya-school-supplies.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #1B2F52; --navy-dark: #111E35; --gold: #C4A44A; --gold-light: #D4B96A;
+    --gold-dark: #9A7E32; --sand: #F5EFE2; --sand-dark: #E8DEC8; --ivory: #FDFAF4;
+    --charcoal: #1A1A18; --warm-gray: #6B6358; --light-gray: #B5AFA5; --white: #FFFFFF;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --max-w: 1100px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--ivory); color: var(--charcoal); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  /* PAGE TRANSITION */
+  .page-transition { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: var(--ivory); pointer-events: none; opacity: 0; transition: opacity 0.3s ease; }
+  .page-transition.active { opacity: 1; pointer-events: all; }
+  .page-transition img { width: 220px; animation: logoPulse 0.8s ease-in-out infinite alternate; }
+  @keyframes logoPulse { from { opacity: 0.5; transform: scale(0.96); } to { opacity: 1; transform: scale(1.04); } }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; background: rgba(253,250,244,0.97); border-bottom: 1px solid var(--sand-dark); backdrop-filter: blur(8px); }
+  .nav-logo img { height: 68px; display: block; }
+  .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+  .nav-links a { font-size: 12px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--warm-gray); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--navy); }
+  .nav-links a.active { color: var(--navy); font-weight: 500; }
+  .nav-cta { font-size: 11px !important; font-weight: 500 !important; letter-spacing: 0.1em !important; color: var(--navy) !important; background: var(--gold); padding: 10px 22px; border-radius: 2px; transition: background 0.2s !important; }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* HAMBURGER */
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
+  .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: all 0.3s ease; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--ivory); z-index: 150; flex-direction: column; align-items: center; justify-content: center; gap: 0; padding: 24px; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: var(--font-display); font-size: 34px; font-weight: 500; color: var(--navy); text-decoration: none; padding: 16px 0; border-bottom: 1px solid var(--sand-dark); width: 100%; text-align: center; transition: color 0.2s; }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--gold-dark); }
+  .mobile-menu .mobile-cta { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy) !important; background: var(--gold); margin-top: 20px; padding: 16px 48px; width: auto; border: none !important; border-radius: 2px; }
+
+  /* PAGE HERO */
+  .page-hero { padding: 160px 24px 80px; background: var(--navy-dark); text-align: center; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1600&q=80') center/cover no-repeat; opacity: 0.1; }
+  .page-hero-content { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
+  .eyebrow { font-size: 11px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+  .page-hero h1 { font-family: var(--font-display); font-size: clamp(44px, 6vw, 68px); font-weight: 500; color: var(--ivory); line-height: 1.08; margin-bottom: 20px; }
+  .page-hero h1 em { font-style: italic; color: var(--gold-light); }
+  .page-hero p { font-size: 16px; font-weight: 300; color: rgba(245,239,226,0.65); max-width: 480px; margin: 0 auto; line-height: 1.75; }
+  .gold-rule { width: 48px; height: 2px; background: var(--gold); margin: 20px auto; }
+
+  /* MAIN */
+  main { max-width: var(--max-w); margin: 0 auto; padding: 80px 24px 100px; }
+
+  /* ADVISOR CARD */
+  .advisor-card {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 72px;
+    align-items: start;
+    margin-bottom: 80px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid var(--sand-dark);
+  }
+  .advisor-card:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .advisor-card.reverse { direction: rtl; }
+  .advisor-card.reverse > * { direction: ltr; }
+
+  /* PHOTO */
+  .advisor-photo { position: relative; }
+  .advisor-photo img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+  .advisor-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .advisor-photo-placeholder p { font-size: 13px; color: rgba(255,255,255,0.3); font-style: italic; text-align: center; padding: 0 24px; }
+  .advisor-photo-accent {
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    width: 80px;
+    height: 80px;
+    background: var(--gold);
+    z-index: -1;
+  }
+  .fora-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: var(--navy);
+    border-left: 3px solid var(--gold);
+    padding: 10px 16px;
+  }
+  .fora-badge span { display: block; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 2px; }
+  .fora-badge strong { font-family: var(--font-display); font-size: 16px; font-weight: 500; color: var(--ivory); }
+
+  /* ADVISOR CONTENT */
+  .advisor-content { padding-top: 8px; }
+  .advisor-name {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 5vw, 64px);
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.05;
+    margin-bottom: 6px;
+  }
+  .advisor-title {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 24px;
+    display: block;
+  }
+  .advisor-bio {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--warm-gray);
+    line-height: 1.85;
+    margin-bottom: 32px;
+  }
+  .advisor-bio p + p { margin-top: 14px; }
+
+  /* SPECIALTIES */
+  .advisor-specialties { margin-bottom: 28px; }
+  .advisor-specialties h4 {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 14px;
+  }
+  .specialty-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .specialty-tag {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--navy);
+    background: var(--sand);
+    border: 1px solid var(--sand-dark);
+    padding: 6px 16px;
+    border-radius: 2px;
+  }
+
+  /* FUN FACT */
+  .advisor-funfact {
+    border-left: 2px solid var(--gold);
+    padding: 16px 20px;
+    background: var(--sand);
+    margin-bottom: 28px;
+  }
+  .advisor-funfact span {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .advisor-funfact p {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--warm-gray);
+    line-height: 1.7;
+  }
+
+  /* LANGUAGES */
+  .advisor-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .advisor-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .advisor-meta-item span { font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--light-gray); }
+  .advisor-meta-item strong { font-size: 14px; font-weight: 400; color: var(--charcoal); }
+
+  /* FORA LINK */
+  .fora-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+    margin-top: 24px;
+    display: inline-block;
+    transition: color 0.2s;
+  }
+  .fora-link:hover { color: var(--gold-dark); }
+
+  /* CTA */
+  .advisors-cta {
+    background: var(--navy);
+    padding: 64px 24px;
+    text-align: center;
+  }
+  .advisors-cta h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 500; color: var(--ivory); margin-bottom: 12px; }
+  .advisors-cta h2 em { font-style: italic; color: var(--gold-light); }
+  .advisors-cta p { font-size: 15px; color: rgba(245,239,226,0.55); font-weight: 300; margin-bottom: 32px; max-width: 440px; margin-left: auto; margin-right: auto; }
+  .btn-primary { display: inline-block; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--navy); background: var(--gold); padding: 16px 36px; border-radius: 2px; border: none; cursor: pointer; transition: background 0.2s; font-family: var(--font-body); }
+  .btn-primary:hover { background: var(--gold-light); }
+
+  /* FOOTER */
+  footer { background: var(--sand); padding: 48px 40px 32px; }
+  .footer-inner { max-width: var(--max-w); margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; padding-bottom: 40px; border-bottom: 1px solid var(--sand-dark); margin-bottom: 28px; }
+  .footer-logo { height: 70px; display: block; margin-bottom: 16px; }
+  .footer-brand p { font-size: 14px; color: var(--warm-gray); line-height: 1.7; font-weight: 300; max-width: 280px; }
+  .footer-brand .contact-info { margin-top: 20px; display: flex; flex-direction: column; gap: 6px; }
+  .footer-brand .contact-info a { font-size: 13px; color: var(--warm-gray); text-decoration: none; transition: color 0.2s; }
+  .footer-brand .contact-info a:hover { color: var(--navy); }
+  .footer-col h4 { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy); margin-bottom: 18px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a { font-size: 14px; color: var(--warm-gray); text-decoration: none; font-weight: 300; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--navy); }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-bottom p { font-size: 12px; color: var(--light-gray); }
+
+  @media (max-width: 900px) {
+    nav { padding: 12px 20px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .advisor-card { grid-template-columns: 1fr; gap: 40px; }
+    .advisor-card.reverse { direction: ltr; }
+    .advisor-photo-accent { display: none; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    main { padding: 60px 20px 80px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-transition" id="page-transition">
+  <img src="logo-color.png" alt="Tripsessed">
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo-color.png" alt="Tripsessed Luxury Travel">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#impact">Impact Travel</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="expeditions.html">Expeditions</a></li>
+    <li><a href="advisors.html" class="active">Meet the Advisors</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="index.html#inquiry" class="nav-cta">Start planning</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html#about" onclick="closeMenu()">About</a>
+  <a href="index.html#impact" onclick="closeMenu()">Impact Travel</a>
+  <a href="index.html#services" onclick="closeMenu()">Services</a>
+  <a href="expeditions.html" onclick="closeMenu()">Expeditions</a>
+  <a href="advisors.html" onclick="closeMenu()">Meet the Advisors</a>
+  <a href="faq.html" onclick="closeMenu()">FAQ</a>
+  <a href="index.html#inquiry" class="mobile-cta" onclick="closeMenu()">Start planning</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <span class="eyebrow">The people behind the journeys</span>
+    <h1>Meet the <em>advisors</em></h1>
+    <div class="gold-rule"></div>
+    <p>Two passionate travelers. Over 100 countries between them. One shared belief — that every trip should leave you with a story worth telling.</p>
+  </div>
+</div>
+
+<main>
+
+  <!-- JASON -->
+  <div class="advisor-card">
+    <div class="advisor-photo">
+      <div class="advisor-photo-placeholder">
+        <p>Jason's photo coming soon</p>
+      </div>
+      <div class="advisor-photo-accent"></div>
+    </div>
+    <div class="advisor-content">
+      <h2 class="advisor-name">Jason Tapia</h2>
+      <span class="advisor-title">Co-founder & Travel Advisor</span>
+      <div class="advisor-bio">
+        <p>To Jason, the world is both big and small — big in that there is an endless wealth of experiences waiting to be discovered, small in that every one of them is only a plane ride away. That tension is what drives him.</p>
+        <p>His approach to travel goes far beyond resorts and itineraries. From hiking to the summit of Mt. Fuji at sunrise to cheering alongside locals at a national team match, participating in community races, or stumbling into a festival that wasn't on any travel blog — Jason seeks out the moments that most travelers never find. Every destination has a story that only reveals itself when you stop being a tourist and start being present.</p>
+        <p>With a background in financial services spanning over a decade, Jason brings a consultant's precision to every itinerary he builds — asking the right questions, anticipating the details, and delivering an experience that exceeds expectations at every turn.</p>
+      </div>
+      <div class="advisor-specialties">
+        <h4>Specialties</h4>
+        <div class="specialty-tags">
+          <span class="specialty-tag">South America</span>
+          <span class="specialty-tag">Europe</span>
+          <span class="specialty-tag">Asia</span>
+          <span class="specialty-tag">Adventure Travel</span>
+          <span class="specialty-tag">Impact Travel</span>
+          <span class="specialty-tag">Group Expeditions</span>
+        </div>
+      </div>
+      <div class="advisor-funfact">
+        <span>Fun fact</span>
+        <p>Wherever Jason travels, he starts his mornings with a run through the streets of the destination. No tour bus, no guided walk — just him, the city waking up, and the kind of perspective you can only find at your own pace.</p>
+      </div>
+      <div class="advisor-meta">
+        <div class="advisor-meta-item">
+          <span>Based in</span>
+          <strong>Orlando, Florida</strong>
+        </div>
+        <div class="advisor-meta-item">
+          <span>Languages</span>
+          <strong>English</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KATHERINE -->
+  <div class="advisor-card reverse">
+    <div class="advisor-photo">
+      <img src="https://media.foratravel.com/image/upload/v1747023033/a7f9deae-e353-4cfd-b73c-b920675248a4.jpg"
+           alt="Katherine Aponte — Tripsessed Travel Advisor">
+      <div class="advisor-photo-accent"></div>
+      <div class="fora-badge">
+        <span>Certified</span>
+        <strong>FORA Advisor</strong>
+      </div>
+    </div>
+    <div class="advisor-content">
+      <h2 class="advisor-name">Katherine Aponte</h2>
+      <span class="advisor-title">Co-founder & Travel Advisor</span>
+      <div class="advisor-bio">
+        <p>Katherine's passion for travel runs deep — she is drawn to hidden treasures, genuine human connections, and the kind of moments that stay with you long after the trip ends. For her, travel is never just about seeing the world. It's about becoming part of it, even briefly.</p>
+        <p>Her expertise spans the full spectrum of travel experiences — from luxury safaris and European escapes to family adventures, solo journeys, and once-in-a-lifetime celebrations abroad like quinceañeras and Sweet 16 photoshoots in stunning international destinations. She has a particular gift for understanding what a traveler truly wants and building an experience around that vision with care and creativity.</p>
+        <p>Whether she's tracking wildlife at dawn or wandering through a colorful local market, Katherine approaches every trip the same way: with curiosity, warmth, and an obsession with getting the details exactly right.</p>
+      </div>
+      <div class="advisor-specialties">
+        <h4>Specialties</h4>
+        <div class="specialty-tags">
+          <span class="specialty-tag">Luxury Travel</span>
+          <span class="specialty-tag">Family Travel</span>
+          <span class="specialty-tag">Europe</span>
+          <span class="specialty-tag">South America</span>
+          <span class="specialty-tag">Middle East</span>
+          <span class="specialty-tag">Celebrations Abroad</span>
+          <span class="specialty-tag">Safaris</span>
+          <span class="specialty-tag">Group Travel</span>
+        </div>
+      </div>
+      <div class="advisor-funfact">
+        <span>Fun fact</span>
+        <p>Katherine has planned quinceañera and Sweet 16 photoshoot celebrations in destinations around the world — turning milestone moments into international adventures that families remember forever.</p>
+      </div>
+      <div class="advisor-meta">
+        <div class="advisor-meta-item">
+          <span>Based in</span>
+          <strong>Orlando, Florida</strong>
+        </div>
+        <div class="advisor-meta-item">
+          <span>Languages</span>
+          <strong>English, Spanish</strong>
+        </div>
+      </div>
+      <a href="https://www.foratravel.com/advisor/katherine-aponte" target="_blank" class="fora-link">View FORA profile & reviews ›</a>
+    </div>
+  </div>
+
+</main>
+
+<!-- CTA -->
+<div class="advisors-cta">
+  <h2>Ready to start <em>planning?</em></h2>
+  <p>Every great trip starts with a conversation. Tell us where you want to go.</p>
+  <a href="index.html#inquiry" class="btn-primary">Start planning your trip</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo-color.png" alt="Tripsessed Luxury Travel" class="footer-logo">
+        <p>Luxury travel planning with purpose. FORA advisors serving clients worldwide.</p>
+        <div class="contact-info">
+          <a href="mailto:info@tripsessed.com">info@tripsessed.com</a>
+          <a href="tel:4078289582">(407) 828-9582</a>
+          <a href="https://www.instagram.com/tripsessed.luxurytravel" target="_blank" style="display:flex;align-items:center;gap:8px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            @tripsessed.luxurytravel
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html#about">About us</a></li>
+          <li><a href="index.html#impact">Impact travel</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="expeditions.html">Expeditions</a></li>
+          <li><a href="advisors.html">Meet the Advisors</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="index.html#inquiry">Start planning</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="https://www.unitedinone.org" target="_blank">United in One Foundation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Tripsessed Luxury Travel Service. All rights reserved.</p>
+      <p>FORA Travel Advisor · Florida Seller of Travel Reg. No. ST43973</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const transition = document.getElementById('page-transition');
+  document.querySelectorAll('a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && !href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('tel') && !href.startsWith('http') && href !== '#') {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        transition.classList.add('active');
+        setTimeout(() => { window.location.href = href; }, 600);
+      });
+    }
+  });
+  window.addEventListener('pageshow', () => { transition.classList.remove('active'); });
+
+  function toggleMenu() {
+    document.getElementById('hamburger').classList.toggle('open');
+    document.getElementById('mobile-menu').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+</script>
+</body>
+</html>
