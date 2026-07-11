@@ -1483,6 +1483,9 @@
     });
     updateDots(closest);
   });
+
+  // Hamburger menu
+  function toggleMenu() {
     document.getElementById('hamburger').classList.toggle('open');
     document.getElementById('mobile-menu').classList.toggle('open');
     document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
@@ -1493,15 +1496,13 @@
     document.body.style.overflow = '';
   }
 
-  // Page transition on external links
+  // Page transition
   const transition = document.getElementById('page-transition');
 
-  // Fade out on page load
   window.addEventListener('pageshow', () => {
     transition.classList.remove('active');
   });
 
-  // Smooth fade before navigating
   document.querySelectorAll('a[href]').forEach(link => {
     const href = link.getAttribute('href');
     if (
